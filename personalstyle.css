@@ -13,5 +13,11 @@
     		height: 200px;
     		text-align: center;
 		}
+
+	img.one {
+		height: 50%;
+		width: 50%;
+
+	}
 	}
 }
