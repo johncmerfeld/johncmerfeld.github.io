@@ -5,21 +5,24 @@
     	background-color: lightgreen;
 		}
 
-	header {
-		div {
-    		border: 1px solid darkgreen;
-    		padding: 10px;
-    		width: 200px;
-    		height: 200px;
-    		text-align: center;
-		}
-	header.center {text-align: center;}
-	h1.center {text-align: center;}
+	h1{
+		text-align: center;
+		color: darkgreen;
+
+	}
 
 	img {
 		height: 200px;
 		width: 200px;
 
 	}
+
+	p{
+		margin-left: 10%;
+		padding: 30px;
+		font-size: 22px;
+
+	}
+
 	}
 }
