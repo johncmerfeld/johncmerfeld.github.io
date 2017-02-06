@@ -12,7 +12,17 @@ PROGRESS:
 		- bio incomplete !
 		- homepage messy !
 		- not enough CSS rules !
-		- Insufficient linking ! 
+		- Insufficient linking !
+
+
+
+		(1 point) A README (e.g., README.txt or README.md) file that briefly describes your work.
+		(1 point) Use at least 5 rules in one of your CSS file.
+		(1 point) All pages pass the official HTML5 specifications; warnings acceptable.
+		(1 point) All CSS files pass the official CSS validation; warnings acceptable.
+
+
+
 
 
 2. Identify anyone with whom you have collaborated
