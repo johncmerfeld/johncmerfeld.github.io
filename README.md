@@ -1,34 +1,13 @@
 # johncmerfeld.github.io
-Personal portfolio
+This is a website for my personal portfolio. It contains a resume with some links to various projects and a short bio page. In future iterations I plan to add a more detailed list of my projects and where to find them, as well as more links to programming projects more specifically.
 
-
-1. Identify what aspects of the work
-have been correctly implemented and what have not.
-PROGRESS:
-	- uploaded image
-	- redirects from Tufts CS
-	- three pages up
-		- homepage messy !
-		- not enough CSS rules !
-
-
-
-		(1 point) A README (e.g., README.txt or README.md) file that briefly describes your work.
-		(1 point) Use at least 5 rules in one of your CSS file.
 		(1 point) All pages pass the official HTML5 specifications; warnings acceptable.
 		(1 point) All CSS files pass the official CSS validation; warnings acceptable.
 
 
 
+I used some of Ming Chow's example CSS to help troubleshoot and test my HTML, although all CSS used by the actual page was written by myself. You'll see that file is in the repo but is not used by the HTML. 
 
-
-
-
-2. Identify anyone with whom you have collaborated
-or discussed the assignment.
-- Used some of Ming Chow's example CSS to help troubleshoot and test my HTML, although all CSS used by the actual page was written by myself.
-
-3. Say approximately how many hours you have spent
-completing the assignment.
-- 2 hours Sunday
-- 3 hours Monday
+Time spent working:
+- ~2 hours Sunday
+- ~4 hours Monday

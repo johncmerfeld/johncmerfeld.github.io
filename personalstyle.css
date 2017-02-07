@@ -52,3 +52,6 @@
 		font-weight: bold;
 		line-height: 110%;
 	}
+	ul li{
+		line-height: 105%;
+	}
