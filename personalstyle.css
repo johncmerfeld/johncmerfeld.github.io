@@ -39,6 +39,9 @@
 		font-weight: bold;
 
 	}
+	p.italic {
+    font-style: italic;
+	}
 
 	}
 }
