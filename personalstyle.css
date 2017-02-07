@@ -52,8 +52,8 @@
 		font-weight: bold;
 		line-height: 110%;
 	}
-	ul li{
-		line-height: 105%;
+	li{
+  		margin-top: 10px;
 	}
 	.signoff {
 		font-style: oblique;
