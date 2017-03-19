@@ -63,6 +63,7 @@
 		font-style:italic;
 	}
 
-	audio{
-		align-content: center;
+	audio {
+	  width: 300px;
+	  margin: 0 auto;
 	}
