@@ -62,3 +62,7 @@
 	.title {
 		font-style:italic;
 	}
+
+	audio{
+		align-content: center;
+	}
