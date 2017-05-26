@@ -1,7 +1,6 @@
 
 
 	body {
-		text-align: center;
     	background-color: black;
 		color: white;
 		}
@@ -41,6 +40,7 @@
 		font-size: 22px;
 		color: white;
 		font-weight: bold;
+		text-align: center;
 
 	}
 	p.italic {
