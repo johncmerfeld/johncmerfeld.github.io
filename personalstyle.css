@@ -1,6 +1,7 @@
 
 
 	body {
+		text-align: center;
     	background-color: black;
 		color: white;
 		}
@@ -68,4 +69,23 @@
 	audio {
 	  width: 300px;
 	  margin: 0 auto;
+	}
+	/* unvisited link */
+	a:link {
+	    color: lightblue;
+	}
+
+	/* visited link */
+	a:visited {
+	    color: lightblue;
+	}
+
+	/* mouse over link */
+	a:hover {
+	    color: blue;
+	}
+
+	/* selected link */
+	a:active {
+	    color: lightblue;
 	}
