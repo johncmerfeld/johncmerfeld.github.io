@@ -66,6 +66,15 @@
 	  text-align: right;
 	}
 
+	.numbertext-deep {
+	  color: #000000;
+	  font-size: 12px;
+	  padding: 32px 6px;
+	  position: absolute;
+	  top: 0;
+	  text-align: right;
+	}
+
 	/* The dots/bullets/indicators */
 	.dot {
 	  cursor:pointer;
