@@ -140,11 +140,15 @@
 
 	}
 
+	figure{
+		float: right;
+
+	}
+
 	img {
 		display: block;
     	margin: auto;
     	width: 40%;
-		float: right;
 
 	}
 
