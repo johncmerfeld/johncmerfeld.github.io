@@ -198,6 +198,11 @@
     text-align: center;
 	}
 
+	blockquote{
+		color: #e6e6e6;
+
+	}
+
 	audio {
 	  width: 300px;
 	  margin: 0 auto;
