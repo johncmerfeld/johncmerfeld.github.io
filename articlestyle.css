@@ -140,15 +140,12 @@
 
 	}
 
-	figure{
-		float: right;
-
-	}
 
 	img {
 		display: block;
     	margin: auto;
     	width: 40%;
+		float:right;
 
 	}
 
@@ -189,6 +186,15 @@
 	}
 	.title {
 		font-style:italic;
+	}
+
+	.myfigure {
+    float: right;
+    width: 120px;
+    margin: 0 0 15px 20px;
+    padding: 15px;
+    /*border: 1px solid black;*/
+    text-align: center;
 	}
 
 	audio {
