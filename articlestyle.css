@@ -1,5 +1,5 @@
 	* {box-sizing:border-box}
-	/*body {font-family: Verdana,sans-serif;margin:0}*/
+	body {font-family: Verdana,sans-serif;margin:0}
 	.mySlides {display:none}
 
 	/* Slideshow container */
@@ -127,6 +127,7 @@
 	h1{
 		text-align: center;
 		color: white;
+		font-family: Times,serif;
 
 	}
 	h2{
@@ -137,6 +138,7 @@
 	h3{
 		text-align: center;
 		color: white;
+		font-family: Times,serif;
 
 	}
 	h4{
