@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title> Atom to Atom - about me </title>
+		<link rel="stylesheet" type="text/css" href="personalstyle.css">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-96173854-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<iframe id="frmFile" src="mytrash.txt" onload="LoadFile();" style="display: none;"></iframe>
+
+		<script type="text/javascript">
+function LoadFile() {
+    var oFrame = document.getElementById("frmFile");
+    var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
+    while (strRawContents.indexOf("\r") >= 0)
+        strRawContents = strRawContents.replace("\r", "");
+    var arrLines = strRawContents.split("\n");
+    alert("File " + oFrame.src + " has " + arrLines.length + " lines");
+    for (var i = 0; i < arrLines.length; i++) {
+        var curLine = arrLines[i];
+        alert("Line #" + (i + 1) + " is: '" + curLine + "'");
+    }
+}
+</script>
+
+	</body>
+
+</html>
