@@ -20,7 +20,7 @@
 
 	<body>
 
-		<iframe id="frmFile" src="mytrash.txt" onload="LoadFile();" style="display: none;"></iframe>
+		<iframe id="frmFile" src="mytrash.csv" onload="LoadFile();" style="display: none;"></iframe>
 
 		<script type="text/javascript">
 function LoadFile() {
@@ -34,7 +34,7 @@ function LoadFile() {
         coeff[i] = arrLines[i];
 		console.log(coeff[i]);
     }
-	document.write(coeff[2])
+	console.log(2*coeff[1])
 }
 </script>
 
