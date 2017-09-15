@@ -29,11 +29,11 @@ function LoadFile() {
     while (strRawContents.indexOf("\r") >= 0)
         strRawContents = strRawContents.replace("\r", "");
     var arrLines = strRawContents.split("\n");
-    alert("File " + oFrame.src + " has " + arrLines.length + " lines");
+	var coeff = [];
     for (var i = 0; i < arrLines.length; i++) {
-        var curLine = arrLines[i];
-        alert("Line #" + (i + 1) + " is: '" + curLine + "'");
+        coeff[i] = arrLines[i];
     }
+	console.log(coeff)
 }
 </script>
 
