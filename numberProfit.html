@@ -20,6 +20,7 @@
 
         <p> And now <strong>you</strong> can play a crappy but functional JavaScript version of this game! </p>
 
+        <p> Player A's token: 
         <select id="ddlViewBy1">
             <option value="0"selected="selected">(select one)</option>
             <option value="1">1</option>
@@ -34,6 +35,7 @@
             <option value="10">10</option>
         </select>
 
+        Player B's token:
         <select id="ddlViewBy2">
             <option value="0"selected="selected">(select one)</option>
             <option value="1">1</option>
@@ -48,6 +50,7 @@
             <option value="10">10</option>
         </select>
 
+        Player C's token:
         <select id="ddlViewBy3">
             <option value="0"selected="selected">(select one)</option>
             <option value="1">1</option>
@@ -61,7 +64,7 @@
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
-	
+	</p>
         <button onclick="playGame()">Who wins what?</button>
 
         <p id="playerA"></p>
@@ -72,19 +75,138 @@
           function playGame() {
             /* place the three tokens */
             let t1 = document.getElementById("ddlViewBy1");
-            let v1 = t1.options[t1.selectedIndex].value;
+            let v1 = parseInt(t1.options[t1.selectedIndex].value);
             let t2 = document.getElementById("ddlViewBy2");
-            let v2 = t2.options[t2.selectedIndex].value;
+            let v2 = parseInt(t2.options[t2.selectedIndex].value);
             let t3 = document.getElementById("ddlViewBy3");
-            let v3 = t3.options[t3.selectedIndex].value;
+            let v3 = parseInt(t3.options[t3.selectedIndex].value);
 
             /* make sure the user actually did something */
             if (v1 == 0 || v2 == 0 || v3 == 0) {
               document.getElementById("playerA").innerHTML = "You need to select a valid spot for all three players!";
+              document.getElementById("playerB").innerHTML = "";
+              document.getElementById("playerC").innerHTML = "";
             } else if (v1 == v2 || v2 == v3 || v3 == v1) {
               document.getElementById("playerA").innerHTML = "You can't put multiple tokens on the same space!";
+              document.getElementById("playerB").innerHTML = "";
+              document.getElementById("playerC").innerHTML = "";
             } else {
               /* calculate payouts */
+              /* WARNING: this is like a super dumb way to do this but
+              /*   I don't know what JavaScript's data structures are like */
+              let low = 0;
+              let mid = 0;
+              let high = 0;
+              let lowest = 0;
+              let middle = 0;
+              let highest = 0;
+              if (v1 > v2 && v1 > v3) {
+                high = v1
+                highest = 1
+                if (v2 > v3) {
+                  mid = v2
+                  middle = 2
+                  low = v3
+                  lowest = 3
+                } else {
+                  mid = v3
+                  middle = 3
+                  low = v2
+                  lowest = 2
+                }
+              } else if (v2 > v1 && v2 > v3) {
+                high = v2
+                highest = 2
+                if (v1 > v3) {
+                  mid = v1
+                  middle = 1
+                  low = v3
+                  lowest = 3
+                } else {
+                  mid = v3
+                  middle = 3
+                  low = v1
+                  lowest = 1
+                }
+              } else {
+                high = v3
+                highest = 3
+                if (v1 > v2) {
+                  mid = v1
+                  middle = 1
+                  low = v2
+                  lowest = 2
+                } else {
+                  mid = v2
+                  middle = 2
+                  low = v1
+                  lowest = 1
+                }
+              }
+
+              let plow = 0;
+              let pmid = 0;
+              let phigh = 0;
+
+              /* first, the easy stuff */
+              var i
+              for (i = 1; i <= low; i++) {
+                plow += i;
+              }
+              pmid = parseInt(mid);
+              for (i = 10; i >= high; i--) {
+                phigh += i;
+              }
+              console.log(plow, pmid, phigh);
+
+              /* now, low-mid conflicts */
+              for (i = 1; i <= ((mid - low) / 2.0); i++) {
+                console.log(plow);
+                if ((mid - i) == (low + i)) {
+                  plow += ((mid + low) / 4.0);
+                  pmid += ((mid + low) / 4.0);
+                } else {
+                  console.log(low + i);
+                  plow += low + i;
+                  pmid += mid - i;
+                }
+                console.log(plow);
+              }
+
+              /* now, mid-high conflicts */
+              for (i = 1; i <= ((high - mid) / 2.0); i++) {
+                if ((high - i) == (mid + i)) {
+                  pmid += ((high + mid) / 4.0);
+                  phigh += ((high + mid) / 4.0);
+                } else {
+                  pmid += mid + i;
+                  phigh += high - i;
+                }
+              }
+              
+
+             console.log(lowest, middle, highest)
+             if (lowest == 1) {
+               p1 = plow
+             } else if (lowest == 2) {
+               p2 = plow
+             } else {
+               p3 = plow
+             }
+             if (middle == 1) {
+               p1 = pmid
+             } else if (middle == 2) {
+               p2 = pmid
+             } else {
+               p3 = pmid
+             }
+             if (highest == 1) {
+               p1 = highest
+             } else if (highest == 2) {
+               p2 = phigh
+             } else {
+               p3 = phigh
+             }
 
               /* print payouts to the screen */
               document.getElementById("playerA").innerHTML = "Player A wins $" + p1;
