@@ -18,9 +18,10 @@
 
         <p> Each player has a personalized token. They take turns — Ariel first, Beatrice second and Cassandra third — placing their tokens on one of the money stacks (only one token is allowed per space). Once the tokens are all placed, each player gets to take every stack that her token is on or is closest to. If a stack is midway between two tokens, the players split that cash. </p>
 
-        <p> And now <strong>you</strong> can play a crappy but functional JavaScript version of this game! </p>
+        <p> And now <strong>you</strong> can play a crappy but functional JavaScript version of this game! Simply select a space for each token and see what everyone's payout is.</p>
 
-        <p> Player A's token: 
+        <p> 
+        Player A's token: 
         <select id="ddlViewBy1">
             <option value="0"selected="selected">(select one)</option>
             <option value="1">1</option>
@@ -34,7 +35,8 @@
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
-
+        </p>
+        <p>
         Player B's token:
         <select id="ddlViewBy2">
             <option value="0"selected="selected">(select one)</option>
@@ -49,7 +51,8 @@
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
-
+        </p>
+        <p>
         Player C's token:
         <select id="ddlViewBy3">
             <option value="0"selected="selected">(select one)</option>
@@ -157,20 +160,16 @@
               for (i = 10; i >= high; i--) {
                 phigh += i;
               }
-              console.log(plow, pmid, phigh);
 
               /* now, low-mid conflicts */
               for (i = 1; i <= ((mid - low) / 2.0); i++) {
-                console.log(plow);
                 if ((mid - i) == (low + i)) {
                   plow += ((mid + low) / 4.0);
                   pmid += ((mid + low) / 4.0);
                 } else {
-                  console.log(low + i);
                   plow += low + i;
                   pmid += mid - i;
                 }
-                console.log(plow);
               }
 
               /* now, mid-high conflicts */
@@ -184,8 +183,6 @@
                 }
               }
               
-
-             console.log(lowest, middle, highest)
              if (lowest == 1) {
                p1 = plow
              } else if (lowest == 2) {
@@ -209,9 +206,9 @@
              }
 
               /* print payouts to the screen */
-              document.getElementById("playerA").innerHTML = "Player A wins $" + p1;
-              document.getElementById("playerB").innerHTML = "Player B wins $" + p2;
-              document.getElementById("playerC").innerHTML = "Player C wins $" + p3;
+              document.getElementById("playerA").innerHTML = "Player A wins $" + p1.toFixed(2);
+              document.getElementById("playerB").innerHTML = "Player B wins $" + p2.toFixed(2);
+              document.getElementById("playerC").innerHTML = "Player C wins $" + p3.toFixed(2);
             }
 
           }
