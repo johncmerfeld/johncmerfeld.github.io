@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> It's Riddler time! </title>A
+        <link rel="stylesheet" type="text/css" href="articlestyle.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h1> NumberProfit, a Riddler solution by John C. Merfeld </h1>
+        </header>
+
+        <h2> From the <A href="https://fivethirtyeight.com/features/step-1-game-theory-step-2-step-3-profit/">August 17, 2018</A> Riddler: </h2>
+
+        <p> Ariel, Beatrice and Cassandra — three brilliant game theorists — were bored at a game theory conference (shocking, we know) and devised the following game to pass the time. They drew a number line and placed $1 on the 1, $2 on the 2, $3 on the 3 and so on to $10 on the 10. </p>
+
+        <p> Each player has a personalized token. They take turns — Ariel first, Beatrice second and Cassandra third — placing their tokens on one of the money stacks (only one token is allowed per space). Once the tokens are all placed, each player gets to take every stack that her token is on or is closest to. If a stack is midway between two tokens, the players split that cash. </p>
+
+        <p> And now <strong>you</strong> can play a crappy but functional JavaScript version of this game! </p>
+
+        <select id="ddlViewBy1">
+            <option value="0"selected="selected">(select one)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+
+        <select id="ddlViewBy2">
+            <option value="0"selected="selected">(select one)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+
+        <select id="ddlViewBy3">
+            <option value="0"selected="selected">(select one)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+	
+        <button onclick="playGame()">Who wins what?</button>
+
+        <p id="playerA"></p>
+        <p id="playerB"></p>
+        <p id="playerC"></p>
+
+        <script>
+          function playGame() {
+            /* place the three tokens */
+            let t1 = document.getElementById("ddlViewBy1");
+            let v1 = t1.options[t1.selectedIndex].value;
+            let t2 = document.getElementById("ddlViewBy2");
+            let v2 = t2.options[t2.selectedIndex].value;
+            let t3 = document.getElementById("ddlViewBy3");
+            let v3 = t3.options[t3.selectedIndex].value;
+
+            /* make sure the user actually did something */
+            if (v1 == 0 || v2 == 0 || v3 == 0) {
+              document.getElementById("playerA").innerHTML = "You need to select a valid spot for all three players!";
+            } else if (v1 == v2 || v2 == v3 || v3 == v1) {
+              document.getElementById("playerA").innerHTML = "You can't put multiple tokens on the same space!";
+            } else {
+              /* calculate payouts */
+
+              /* print payouts to the screen */
+              document.getElementById("playerA").innerHTML = "Player A wins $" + p1;
+              document.getElementById("playerB").innerHTML = "Player B wins $" + p2;
+              document.getElementById("playerC").innerHTML = "Player C wins $" + p3;
+            }
+
+          }
+
+
+
+        </script>
+
+    </body>
+</html>

@@ -9,4 +9,11 @@
     	color: navy;
     	margin-left: 20px;
 	}
+
+	select {
+	display: block;
+	margin: 0 auto;
+	}
+
 }
+
